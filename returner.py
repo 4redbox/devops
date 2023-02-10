@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 
 # Take input value from the command line
