@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'a81a47ec-bddb-4269-b191-3b12ca2f6316', url: 'https://github.com/4redbox/devops.git']]])
+                echo 'build is complete'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'python returner.py 5'
+            }
+        }
+        stage('QA') {
+            steps {
+                sh 'python returner.py'
+            }
+        }
+    }
+}
