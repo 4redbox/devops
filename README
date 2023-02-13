@@ -1,0 +1,18 @@
+This jenkins file will 
+  - build various stages 
+  - deploy the python program
+  - test the program
+  
+pre requisite:
+   - Install Jenkins and run the server (either locally or server or cloud)
+   - Install Pipeline Plugins
+
+Below are the steps in Jenkins
+  - Create ne pipeline project
+  - Under SCM, check 'git' and provide the repoistry link
+  - Under Trigger, mention how often the pipeline should run, 
+      - we can give '* * * * *' under Poll SCM
+  - Under pipeline script, select Pipeline SCM and provide the link again
+    mentioning the jenkinfile script name
+
+In case of any error, please contact raja4redbox@gmail.com
