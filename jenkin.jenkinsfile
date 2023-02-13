@@ -18,5 +18,12 @@ pipeline {
                 sh 'python returner.py'
             }
         }
+        stage('SIT') {
+            steps {
+                sh 'python returner.py 10'
+                sh 'python returner.py 15'
+                sh 'python returner.py 100'
+            }
+        }
     }
 }
